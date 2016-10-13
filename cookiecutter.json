@@ -1,3 +1,6 @@
 {
-  "project_name": "MyProject"
+  "project_name": "MyProject",
+  "db_name": "MyProject",
+  "db_username": "username",
+  "db_password": "Password123!"
 }
