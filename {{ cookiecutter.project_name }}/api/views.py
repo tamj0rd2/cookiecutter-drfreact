@@ -1,4 +1,5 @@
 from rest_framework import viewsets
+from django.shortcuts import render
 """Create your serializers here. Examples:
 
 from django.contrib.auth.models import User, Group
@@ -15,3 +16,6 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
 """
+
+def home(request):
+    return render(request, 'index.html')

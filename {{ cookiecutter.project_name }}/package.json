@@ -1,0 +1,23 @@
+{
+  "name": "{{cookiecutter.project_name}}",
+  "version": "{{cookiecutter.project_version}}",
+  "description": "{{cookiecutter.project_description}}",
+  "main": "{{cookiecutter.react_entrypoint}}",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "{{cookiecutter.project_author}}",
+  "license": "",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.16.0",
+    "eslint": "^3.7.1",
+    "eslint-plugin-react": "^6.3.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "webpack": "^1.13.2",
+    "webpack-bundle-tracker": "0.0.93"
+  }
+}

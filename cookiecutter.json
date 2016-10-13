@@ -1,5 +1,9 @@
 {
   "project_name": "MyProject",
+  "project_version": "1.0.0",
+  "project_author": "tamj0rd2",
+  "project_description": "",
+  "react_entrypoint": "index.js",
   "db_name": "MyProject",
   "db_username": "username",
   "db_password": "Password123!"

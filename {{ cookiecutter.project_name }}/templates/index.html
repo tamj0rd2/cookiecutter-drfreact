@@ -1,0 +1,12 @@
+{{ "{% load render_bundle from webpack_loader %}" }}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{cookiecutter.project_name}}</title>
+  </head>
+  <body>
+    <div id="react-app"></div>
+    {{ "{% render_bundle 'main' %}" }}
+  </body>
+</html>
