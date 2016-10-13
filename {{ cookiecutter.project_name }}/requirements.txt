@@ -1,2 +1,5 @@
 Django==1.10.2
+django-filter==0.15.2
+djangorestframework==3.4.7
+Markdown==2.6.7
 psycopg2==2.6.2
