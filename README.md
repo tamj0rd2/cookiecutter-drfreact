@@ -20,14 +20,15 @@ configuration and use something else, e.g sqlite
 - [Editorconfig](http://editorconfig.org/) plugin for your text editor/IDE
 
 ## Starting a project
-1. Run `cookiecutter https://github.com/tamj0rd2/cookiecutter-drfreact`
-2. Fill in the necessary details
-3. `cd` into the newly created folder
-4. Run `npm install`
-5. Run `pip install -r requirements.txt`
-6. Set up your database using psql or pgadmin3 (assuming you'll be using postgresql) if you haven't already
-7. Run `python manage.py migrate`
-8. Run `npm start` and `python manage.py runserver` simultaneously
+1. Run `pip install cookiecutter`
+2. Run `cookiecutter https://github.com/tamj0rd2/cookiecutter-drfreact`
+3. Fill in the necessary details
+4. `cd` into the newly created folder
+5. Run `npm install`
+6. Run `pip install -r requirements.txt`
+7. Set up your database using psql or pgadmin3 (assuming you'll be using postgresql) if you haven't already
+8. Run `python manage.py migrate`
+9. Run `npm start` and `python manage.py runserver` simultaneously
 
 If everything has been set up correctly, when you go to http://127.0.0.1:8000/ you should be able to see "Hello, world."
 
