@@ -4,6 +4,7 @@
   "description": "{{cookiecutter.project_description}}",
   "main": "{{cookiecutter.react_entrypoint}}",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "{{cookiecutter.project_author}}",
@@ -17,7 +18,13 @@
     "eslint-plugin-react": "^6.3.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
+    "react-hot-loader": "^3.0.0-beta.6",
     "webpack": "^1.13.2",
-    "webpack-bundle-tracker": "0.0.93"
+    "webpack-bundle-tracker": "0.0.93",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "babel": {
+    "plugins": ["react-hot-loader/babel"],
+    "presets": ["react"]
   }
 }

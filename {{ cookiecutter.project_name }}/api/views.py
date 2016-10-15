@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from django.shortcuts import render
-"""Create your serializers here. Examples:
+"""Create your views here. Examples:
 
 from django.contrib.auth.models import User, Group
 from api.quickstart.serializers import UserSerializer, GroupSerializer

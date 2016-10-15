@@ -5,16 +5,24 @@ var BundleTracker = require('webpack-bundle-tracker')
 module.exports = {
   context: __dirname,
 
-  entry: './assets/js/index',
+  entry: [
+    'webpack-dev-server/client?http://localhost:3000/',
+    'webpack/hot/only-dev-server',
+    './assets/js/index'
+  ],
 
   output: {
     // where compiled bundles should be stored
     path: path.resolve('./assets/bundles/'),
     // the naming convention webpack will use for files
     filename: '[name]-[hash].js',
+    // tell django to use use this URL to load packages
+    publicPath: 'http://localhost:3000/assets/bundles/'
   },
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new BundleTracker({filename: './webpack-stats.json'}),
     // makes jQuery available in every module
     new webpack.ProvidePlugin({
@@ -28,10 +36,7 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader',
-      query: {
-        presets: ['react']
-      }
+      loader: 'babel'
     }]
   },
 
