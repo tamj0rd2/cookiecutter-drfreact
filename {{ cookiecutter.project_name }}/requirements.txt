@@ -1,6 +1,9 @@
 Django==1.10.2
+django-environ==0.4.0
 django-filter==0.15.2
 django-webpack-loader==0.3.3
 djangorestframework==3.4.7
 Markdown==2.6.7
 psycopg2==2.6.2
+six==1.10.0
+wheel==0.24.0
