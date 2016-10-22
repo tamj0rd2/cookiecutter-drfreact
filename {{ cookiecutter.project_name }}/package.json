@@ -4,7 +4,9 @@
   "description": "{{cookiecutter.project_description}}",
   "main": "{{cookiecutter.react_entrypoint}}",
   "scripts": {
-    "start": "node server.js",
+    "hot-reload": "node webpack/server.js",
+    "build-local": "webpack --config webpack/local.config.js --progress --colors",
+    "build-prod": "webpack --config webpack/prod.config.js --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "{{cookiecutter.project_author}}",
