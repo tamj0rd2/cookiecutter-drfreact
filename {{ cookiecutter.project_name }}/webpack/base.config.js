@@ -12,7 +12,7 @@ module.exports = {
     // where compiled bundles should be stored
     path: path.resolve('./assets/bundles/'),
     // the naming convention webpack will use for files
-    filename: '[name]-[hash].js',
+    filename: '[name]-[hash].js'
   },
 
   plugins: [
@@ -28,7 +28,10 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel'
+      loader: 'babel',
+      query: {
+        presets: ['react']
+      }
     }]
   },
 

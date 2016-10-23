@@ -7,26 +7,29 @@
     "hot-reload": "node webpack/server.js",
     "build-local": "webpack --config webpack/local.config.js --progress --colors",
     "build-prod": "webpack --config webpack/prod.config.js --progress --colors",
+    "postinstall": "webpack --config webpack/local.config.js --progress --colors",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "{{cookiecutter.project_author}}",
   "license": "",
-  "devDependencies": {
+  "engines": {
+    "node": "4.6.0",
+    "npm": "3.10.5"
+  },
+  "dependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.17.0",
     "babel-loader": "^6.2.5",
     "babel-preset-react": "^6.16.0",
-    "eslint": "^3.7.1",
-    "eslint-plugin-react": "^6.3.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-hot-loader": "^3.0.0-beta.6",
     "webpack": "^1.13.2",
-    "webpack-bundle-tracker": "0.0.93",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-bundle-tracker": "0.0.93"
   },
-  "babel": {
-    "plugins": ["react-hot-loader/babel"],
-    "presets": ["react"]
+  "devDependencies": {
+    "eslint": "^3.7.1",
+    "eslint-plugin-react": "^6.3.0",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack-dev-server": "^1.16.2"
   }
 }
