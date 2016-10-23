@@ -22,7 +22,7 @@ about node and react. I stumbled my way through this entire thing :D
 ## Starting a project
 1. Run `pip install cookiecutter`
 2. Run `cookiecutter https://github.com/tamj0rd2/cookiecutter-drfreact`
-3. Fill in the necessary details
+3. Fill in the options
 4. `cd` into the newly created folder
 5. Run `npm install`
 6. Run `pip install -r requirements.txt`
@@ -32,10 +32,25 @@ about node and react. I stumbled my way through this entire thing :D
 
 If everything has been set up correctly, when you go to http://127.0.0.1:8000/ you should be able to see "Hello, world."
 
+### Cookiecutter options
+* *project_name* - The name of your project
+* *project_slug* - The name of your project in lowercase and without spaces
+* *project_author* - The author or the project
+* *project_description* - A short description of your project
+* *project_version* - The version of your project in the format x.x.x
+* *react_entrypoint* - The 'main' file used by package.json. This should be the root of your react app.
+* *localdb_name* - The name of your local database
+* *localdb_username* - The username for your local database
+* *localdb_password* - The password for your local database (must not be blank if you are using PostgreSQL)
+* *heroku_deployment_method* - The method you want to use to deploy to Heroku
+  * *1 (auto)* - if you want to use deployment Method 1 (described further down)
+  * *2 (manual)* - if you want to use deployment Method 2 (described further down)
+  * *3 (none)* - if you don't want to deploy using Heroku at all
+
 ## Deploying to Heroku
 Make sure you have followed the steps in "starting a project" before doing this! Make sure all the steps are followed in order, otherwise you'll have issues. (duh)
 
-### Method 1
+### Method 1 (auto)
 Use this if you don't want to commit your bundles to version control. In this case, bundles will be built automatically any time you push your code to Heroku.
 
 1. Run `git init`
@@ -47,6 +62,11 @@ Use this if you don't want to commit your bundles to version control. In this ca
 7. Run `heroku buildpacks:add heroku/python`
 8. Run `git push heroku master`
 9. Run `heroku open` to see your beautiful app
+
+### Method 2 (manual)
+Use this if you want to commit your bundles to version control. In this case, each time you change the source code for your react app you will need to create a new production bundle and commit it to version control prior to pushing your code to Heroku.
+
+1. Coming soon
 
 ## Sources
 - http://owaislone.org/blog/webpack-plus-reactjs-and-django/

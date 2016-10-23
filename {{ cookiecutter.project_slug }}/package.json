@@ -7,7 +7,9 @@
     "hot-reload": "node webpack/server.js",
     "build-local": "webpack --config webpack/local.config.js --progress --colors",
     "build-prod": "webpack --config webpack/prod.config.js --progress --colors",
+    {% if cookiecutter.heroku_deployment_method == 'auto' %}
     "postinstall": "webpack --config webpack/local.config.js --progress --colors",
+    {% endif %}
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "{{cookiecutter.project_author}}",

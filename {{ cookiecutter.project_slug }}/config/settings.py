@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+{% if cookiecutter.heroku_deployment_method != 'none' %}
 import dj_database_url
+{% endif %}
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -115,13 +116,15 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-
+{% if cookiecutter.heroku_deployment_method != 'none' %}
 # Update database configuration with $DATABASE_URL.
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
+
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+{% endif %}
 
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
@@ -136,10 +139,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
-
+{% if cookiecutter.heroku_deployment_method != 'none' %}
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+{% endif %}
 
 # determine which webpack stats file to use and the bundle directory
 if DEBUG:

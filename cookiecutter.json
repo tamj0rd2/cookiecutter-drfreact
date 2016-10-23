@@ -8,9 +8,5 @@
   "localdb_name": "{{ cookiecutter.project_slug }}",
   "localdb_username": "username",
   "localdb_password": "Password123!",
-  "heroku_deployment_method": [
-    "Automatically create bundles for me during deployment",
-    "I want to manually create bundles and commit them to version control",
-    "I don't want to deploy!"
-  ]
+  "heroku_deployment_method": ["auto", "manual", "none"]
 }
