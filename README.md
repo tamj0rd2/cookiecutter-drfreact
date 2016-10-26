@@ -42,6 +42,7 @@ If everything has been set up correctly, when you go to http://127.0.0.1:8000/ y
 * *localdb_name* - The name of your local database
 * *localdb_username* - The username for your local database
 * *localdb_password* - The password for your local database (must not be blank if you are using PostgreSQL)
+* *use_bootstrap* - Choose whether or not to include bootstrap in the project. Bootstrap is added through webpack rather than through the Django template.
 * *heroku_deployment_method* - The method you want to use to deploy to Heroku
   * *1 (auto)* - if you want to use deployment Method 1 (described further down)
   * *2 (manual)* - if you want to use deployment Method 2 (described further down)
@@ -82,3 +83,4 @@ Use this if you want to commit your bundles to version control. In this case, an
 ## Sources
 - http://owaislone.org/blog/webpack-plus-reactjs-and-django/
 - https://geezhawk.github.io/using-react-with-django-rest-framework
+- http://blog.theodybrothers.com/2015/07/how-to-use-bootstrap-css-only-and.html

@@ -1,4 +1,5 @@
 var React = require('react') // eslint-disable-line no-unused-vars
+require('bootstrap-webpack')
 
 module.exports = React.createClass({
   render: function () {

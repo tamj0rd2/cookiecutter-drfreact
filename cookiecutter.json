@@ -8,5 +8,6 @@
   "localdb_name": "{{ cookiecutter.project_slug }}",
   "localdb_username": "username",
   "localdb_password": "Password123!",
+  "use_bootstrap": "y",
   "heroku_deployment_method": ["auto", "manual", "none"]
 }
