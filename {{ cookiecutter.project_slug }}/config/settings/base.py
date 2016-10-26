@@ -11,37 +11,33 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-{% if cookiecutter.heroku_deployment_method != 'none' %}
-import dj_database_url
-{% endif %}
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+)
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'supersecretkey'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-
-# Application definition
-
-INSTALLED_APPS = [
+DJANGO_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+THIRD_PARTY_APPS = [
     'rest_framework',
     'webpack_loader',
+]
+
+LOCAL_APPS = [
     'api',
 ]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,21 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '{{ cookiecutter.localdb_name }}',
-        'USER': '{{ cookiecutter.localdb_username }}',
-        'PASSWORD': '{{ cookiecutter.localdb_password }}',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -116,18 +97,6 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
-{% if cookiecutter.heroku_deployment_method != 'none' %}
-# Update database configuration with $DATABASE_URL.
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
-
-
-# Honor the 'X-Forwarded-Proto' header for request.is_secure()
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-{% endif %}
-
-# Allow all host headers
-ALLOWED_HOSTS = ['*']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
@@ -139,26 +108,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
-{% if cookiecutter.heroku_deployment_method != 'none' %}
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-{% endif %}
 
-# determine which webpack stats file to use and the bundle directory
-if DEBUG:
-    BUNDLE_DIR_NAME = 'bundles/'
-    STATS_FILE = 'webpack/webpack-stats-local.json'
-else:
-    BUNDLE_DIR_NAME = 'dist/'
-    STATS_FILE = 'webpack/webpack-stats-prod.json'
-
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': BUNDLE_DIR_NAME,
-        'STATS_FILE': os.path.join(BASE_DIR, STATS_FILE)
-    }
-}
 
 REST_FRAMEWORK = {
     # Use Django's standard 'django.contrib.auth' permissions,
