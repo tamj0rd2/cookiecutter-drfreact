@@ -66,9 +66,18 @@ Use this if you don't want to commit your bundles to version control. In this ca
 11. Run `heroku open` to see your beautiful app
 
 ### Method 2 (manual)
-Use this if you want to commit your bundles to version control. In this case, each time you change the source code for your react app you will need to create a new production bundle and commit it to version control prior to pushing your code to Heroku.
+Use this if you want to commit your bundles to version control. In this case, any time you change the source code for your react app you will need to create a new production bundle and commit it to version control prior to pushing your code to Heroku.
 
-1. Coming soon
+1. Run `git init`
+2. If you are a windows user, **make sure** that the line endings for the `runtime.txt` file are set to **LF** (instead of the windows default, CRLF). If you don't do this, you will have problems!
+3. Run `npm run build-prod`
+4. Run `git add * && git commit -am "Initial commit"`
+5. Run `heroku login` and enter your login details
+6. Run `heroku create`
+7. Run `heroku config:set SECRET_KEY=putagoodsecretkeyhere`
+8. Run `heroku config:set DJANGO_SETTINGS_MODULE=config.settings.production`
+9. Run `git push heroku master`
+10. Run `heroku open` to see your beautiful app
 
 ## Sources
 - http://owaislone.org/blog/webpack-plus-reactjs-and-django/
