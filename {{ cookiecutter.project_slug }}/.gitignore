@@ -2,6 +2,7 @@
 node_modules/
 assets/bundles/
 webpack-stats-local.json
+staticfiles/
 {% if cookiecutter.heroku_deployment_method == 'auto' %}
 assets/dist/
 webpack-stats-prod.json

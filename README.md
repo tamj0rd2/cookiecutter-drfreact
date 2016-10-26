@@ -60,8 +60,10 @@ Use this if you don't want to commit your bundles to version control. In this ca
 5. Run `heroku create`
 6. Run `heroku buildpacks:set heroku/nodejs`
 7. Run `heroku buildpacks:add heroku/python`
-8. Run `git push heroku master`
-9. Run `heroku open` to see your beautiful app
+8. Run `heroku config:set SECRET_KEY=putagoodsecretkeyhere`
+9. Run `heroku config:set DJANGO_SETTINGS_MODULE=config.settings.production`
+10. Run `git push heroku master`
+11. Run `heroku open` to see your beautiful app
 
 ### Method 2 (manual)
 Use this if you want to commit your bundles to version control. In this case, each time you change the source code for your react app you will need to create a new production bundle and commit it to version control prior to pushing your code to Heroku.
