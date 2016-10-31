@@ -6,3 +6,8 @@ ReactDOM.render(
   <App />,
   document.getElementById('react-app')
 )
+
+// required to enable hot-reloading of modules
+if (module.hot) {
+  module.hot.accept()
+}
