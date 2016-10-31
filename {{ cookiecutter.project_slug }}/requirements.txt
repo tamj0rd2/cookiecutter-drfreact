@@ -7,6 +7,4 @@ gunicorn==19.6.0
 Markdown==2.6.7
 psycopg2==2.6.2
 six==1.10.0
-{% if cookiecutter.heroku_deployment_method != 'none'%}
-whitenoise==3.2.2
-{% endif %}
+{% if cookiecutter.heroku_deployment_method != 'none'%}whitenoise==3.2.2{% endif %}

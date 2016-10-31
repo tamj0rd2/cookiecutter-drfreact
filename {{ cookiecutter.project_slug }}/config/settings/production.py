@@ -33,7 +33,6 @@ DATABASES = {}
 
 ALLOWED_HOSTS = []
 {% endif %}
-
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'dist/',

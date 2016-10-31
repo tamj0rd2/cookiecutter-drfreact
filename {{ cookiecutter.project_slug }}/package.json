@@ -6,10 +6,8 @@
   "scripts": {
     "hot-reload": "node webpack/server.js",
     "build-local": "webpack --config webpack/local.config.js --progress --colors",
-    "build-prod": "webpack --config webpack/prod.config.js --progress --colors",
-    {% if cookiecutter.heroku_deployment_method == 'auto' %}
-    "postinstall": "webpack --config webpack/prod.config.js --progress --colors",
-    {% endif %}
+    "build-prod": "webpack --config webpack/prod.config.js --progress --colors",{% if cookiecutter.heroku_deployment_method == 'auto' %}
+    "postinstall": "webpack --config webpack/prod.config.js --progress --colors",{% endif %}
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "{{cookiecutter.project_author}}",
@@ -27,9 +25,8 @@
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "webpack": "^1.13.2",
-    "webpack-bundle-tracker": "0.0.93"
-    {% if cookiecutter.use_bootstrap == 'y' %}
-    ,"bootstrap": "^3.3.7",
+    "webpack-bundle-tracker": "0.0.93"{% if cookiecutter.use_bootstrap == 'y' %},
+    "bootstrap": "^3.3.7",
     "bootstrap-webpack": "0.0.5",
     "css-loader": "^0.25.0",
     "exports-loader": "^0.6.3",
@@ -39,8 +36,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7"
-    {% endif %}
+    "url-loader": "^0.5.7"{% endif %}
   },
   "devDependencies": {
     "eslint": "^3.7.1",

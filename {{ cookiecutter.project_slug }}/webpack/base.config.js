@@ -32,8 +32,7 @@ module.exports = {
         query: {
           presets: ['react']
         }
-      },
-      {% if cookiecutter.use_bootstrap == 'y' %}
+      }{% if cookiecutter.use_bootstrap == 'y' %},
       {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
@@ -53,8 +52,7 @@ module.exports = {
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
         loader: 'url?limit=10000&mimetype=image/svg+xml'
-      }
-      {% endif %}
+      }{% endif %}
     ]
   },
 
