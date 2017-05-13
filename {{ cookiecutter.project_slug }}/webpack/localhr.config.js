@@ -1,8 +1,7 @@
 /** Local/development configuration for webpack. Uses hot reload.
   * Any time your source js files change, the bundle will be updated in memory.
-  * To use this configuration, run either of the below commands:
-  * npm run hot-reload
-  * node webpack/server.js
+  * To use this configuration, run the following command:
+  * npm start
 **/
 
 var path = require('path')

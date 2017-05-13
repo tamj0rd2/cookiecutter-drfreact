@@ -4,7 +4,7 @@
   "description": "{{cookiecutter.project_description}}",
   "main": "{{cookiecutter.react_entrypoint}}",
   "scripts": {
-    "hot-reload": "node webpack/server.js",
+    "start": "node webpack/server.js",
     "build-local": "webpack --config webpack/local.config.js --progress --colors",
     "build-prod": "webpack --config webpack/prod.config.js --progress --colors",{% if cookiecutter.heroku_deployment_method == 'auto' %}
     "postinstall": "webpack --config webpack/prod.config.js --progress --colors",{% endif %}
